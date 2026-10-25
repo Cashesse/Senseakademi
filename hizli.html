@@ -1,0 +1,1258 @@
+<!doctype html>
+<!--
+  Sayfa rehberi: Üst menü <header>, ana içerik <main>, alt bağlantılar <footer> içindedir.
+  Metinleri HTML'den, sayfa bağlantılarını href değerlerinden düzenleyebilirsiniz.
+  class değerleri görünümü belirler; aşağıdaki Tailwind ayarları renk ve ölçüleri tanımlar.
+-->
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind tasarım ayarları: projede kullanılan renk, boşluk ve yazı boyutları. -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#ffffff",
+              secondary: "#ba0520",
+              "primary-fixed-dim": "#bdc5e9",
+              "surface-container": "#e7eeff",
+              "surface-variant": "#dbe2f6",
+              primary: "#010723",
+              "surface-dim": "#d2daed",
+              "primary-fixed": "#dce1ff",
+              "on-tertiary-container": "#5582f5",
+              surface: "#f9f9ff",
+              "on-primary-fixed": "#121a36",
+              "on-tertiary-fixed": "#001849",
+              "on-secondary-fixed": "#410005",
+              "on-error": "#ffffff",
+              "tertiary-container": "#001c54",
+              "surface-container-high": "#e0e8fc",
+              "on-primary-container": "#7f87a8",
+              "surface-container-highest": "#dbe2f6",
+              "on-primary": "#ffffff",
+              "primary-container": "#171f3b",
+              "on-error-container": "#93000a",
+              "secondary-container": "#de2b35",
+              "surface-bright": "#f9f9ff",
+              "inverse-surface": "#29313f",
+              "tertiary-fixed-dim": "#b3c5ff",
+              "on-surface": "#141c29",
+              "surface-tint": "#555d7d",
+              "secondary-fixed-dim": "#ffb3ae",
+              "on-background": "#141c29",
+              "on-tertiary-fixed-variant": "#003fa5",
+              "inverse-on-surface": "#ecf0ff",
+              "secondary-fixed": "#ffdad7",
+              "on-primary-fixed-variant": "#3e4564",
+              "surface-container-lowest": "#ffffff",
+              tertiary: "#000722",
+              "on-secondary-container": "#fffbff",
+              "inverse-primary": "#bdc5e9",
+              "tertiary-fixed": "#dbe1ff",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#930016",
+              "on-surface-variant": "#45464d",
+              error: "#ba1a1a",
+              "on-secondary": "#ffffff",
+              "outline-variant": "#c6c6ce",
+              "surface-container-low": "#f0f3ff",
+              outline: "#76767e",
+              background: "#f9f9ff",
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+            spacing: {
+              "space-sm": "0.5rem",
+              "space-xs": "0.25rem",
+              "margin-lg": "2.5rem",
+              "space-xl": "1.5rem",
+              "gutter-lg": "1.5rem",
+              "margin-md": "1.5rem",
+              gutter: "1.25rem",
+              "space-lg": "1rem",
+              "space-3xl": "3rem",
+              "space-md": "0.75rem",
+              "space-2xl": "2rem",
+              margin: "1rem",
+            },
+            fontFamily: {
+              "stat-counter": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "headline-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "display-md": ["Inter"],
+              "display-lg": ["Inter"],
+              "label-md": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "title-md": ["Inter"],
+              "label-lg": ["Inter"],
+              "body-sm": ["Inter"],
+            },
+            fontSize: {
+              "stat-counter": [
+                "48px",
+                { lineHeight: "52px", letterSpacing: "-0.03em", fontWeight: "800" },
+              ],
+              "label-sm": [
+                "11px",
+                { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" },
+              ],
+              "headline-lg-mobile": [
+                "26px",
+                { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" },
+              ],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" },
+              ],
+              "display-md": [
+                "44px",
+                { lineHeight: "52px", letterSpacing: "-0.025em", fontWeight: "700" },
+              ],
+              "display-lg": [
+                "56px",
+                { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "800" },
+              ],
+              "label-md": [
+                "12px",
+                { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" },
+              ],
+              "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+              "headline-sm": [
+                "20px",
+                { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" },
+              ],
+              "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+              "title-md": [
+                "16px",
+                { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" },
+              ],
+              "label-lg": [
+                "14px",
+                { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" },
+              ],
+              "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+      <link rel="stylesheet" href="site-pages.css" />
+  </head>
+  <body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+<header class="home-header">
+  <div class="home-header-inner">
+    <a class="home-brand" href="index.html">
+      <img class="home-brand-logo" src="https://lh3.googleusercontent.com/aida/AEtjO1VLwGG3FPlMlV51Qixnc2VPIUluP1ICFbYijQ43od9C_4ONTPEs-TR3rRendcmwgL0pZp0q-hKgKtHueD0tiVFvH3l1tVMxRaiAk3r1rAy9TzBh9l-TkyBJ5iJA1VEHpKli0xN3aJyhlx7cBs6t9Sjcb-xipouA87FuUsOT8ViXtztbhliF26TqSA1SjaR2EgMBpNVqZGfH82-iddORa4xDitn0fDFrjXGJXQLW_7Q468nr-2n--b4SWKwiALAKNy3xArXKiMhrCg" alt="Sense Akademi" />
+      <span class="home-brand-name">Sense Akademi</span>
+    </a>
+    <nav class="home-nav" aria-label="Ana menü">
+      <a href="index.html">Anasayfa</a>
+      <a href="egitimler.html" aria-current="page">Eğitimlerimiz</a>
+      <a href="biz-kimiz.html">Biz Kimiz?</a>
+      <a href="referanslarimiz.html">Referanslarımız</a>
+      <a href="iletisim.html">İletişim</a>
+    </nav>
+    <div class="home-header-actions">
+      <a class="home-login" href="https://enishoca.senseakademi.com" target="_blank" rel="noopener noreferrer">Giriş Yap</a>
+      <img class="home-profile" src="https://lh3.googleusercontent.com/aida/AEtjO1VLwGG3FPlMlV51Qixnc2VPIUluP1ICFbYijQ43od9C_4ONTPEs-TR3rRendcmwgL0pZp0q-hKgKtHueD0tiVFvH3l1tVMxRaiAk3r1rAy9TzBh9l-TkyBJ5iJA1VEHpKli0xN3aJyhlx7cBs6t9Sjcb-xipouA87FuUsOT8ViXtztbhliF26TqSA1SjaR2EgMBpNVqZGfH82-iddORa4xDitn0fDFrjXGJXQLW_7Q468nr-2n--b4SWKwiALAKNy3xArXKiMhrCg" alt="Profil" />
+    </div>
+  </div>
+</header>
+    <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+      <div class="flex flex-col w-full">
+        <!-- Top Breadcrumb & Status Line -->
+        <section class="w-full bg-surface-container-low py-space-md">
+          <div
+            class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-wrap items-center justify-between gap-space-sm"
+          >
+            <nav
+              aria-label="Breadcrumb"
+              class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"
+            >
+              <a class="hover:text-primary transition-colors" data-path="anasayfa" href="index.html"
+                >Anasayfa</a
+              >
+              <span class="material-symbols-outlined text-sm">chevron_right</span>
+              <a
+                class="hover:text-primary transition-colors"
+                data-path="egitimlerimiz"
+                href="egitimler.html"
+                >Eğitimlerimiz</a
+              >
+              <span class="material-symbols-outlined text-sm">chevron_right</span>
+              <span class="text-primary font-semibold">Anlayarak Hızlı Okuma</span>
+            </nav>
+            <div class="hidden sm:flex items-center gap-space-sm">
+              <span
+                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Kontenjan: Son 3 Kişi
+              </span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant"
+                >2024-2025 Dönemi Aktif Kayıt</span
+              >
+            </div>
+          </div>
+        </section>
+        <!-- Hero Section -->
+        <section class="w-full bg-surface py-space-2xl lg:py-space-3xl relative overflow-hidden">
+          <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+              <!-- Text Column -->
+              <div class="lg:col-span-7 flex flex-col items-start">
+                <div
+                  class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm tracking-wide mb-space-md"
+                >
+                  <span class="material-symbols-outlined text-sm text-secondary">psychology</span>
+                  <span>AKADEMİK BECERİLER &amp; ODALANMA</span>
+                </div>
+                <h1
+                  class="font-display-md text-display-md lg:font-display-lg lg:text-display-lg text-primary tracking-tight mb-space-lg leading-tight"
+                >
+                  Anlayarak Hızlı Okuma Eğitimi
+                </h1>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant mb-space-xl max-w-2xl leading-relaxed"
+                >
+                  Okuma hızını 2 ila 3 katına çıkarırken anlama ve kavrama oranını maksimize eden,
+                  göz kaslarını, periferik vizyonu ve bilişsel algıyı senkronize geliştiren patentli
+                  akademik metodoloji.
+                </p>
+                <!-- Metric / Quick Fact Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm w-full mb-space-xl">
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col"
+                  >
+                    <span class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Toplam Süre</span
+                    >
+                    <span class="font-title-md text-title-md text-primary font-bold mt-1"
+                      >8 Hafta</span
+                    >
+                  </div>
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col"
+                  >
+                    <span class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Haftalık Ders</span
+                    >
+                    <span class="font-title-md text-title-md text-primary font-bold mt-1"
+                      >4 Saat</span
+                    >
+                  </div>
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col"
+                  >
+                    <span class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Hedef Seviye</span
+                    >
+                    <span class="font-title-md text-title-md text-primary font-bold mt-1"
+                      >Lise &amp; Yetişkin</span
+                    >
+                  </div>
+                  <div
+                    class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col"
+                  >
+                    <span class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Sınıf Yapısı</span
+                    >
+                    <span class="font-title-md text-title-md text-primary font-bold mt-1"
+                      >4-6 Kişilik Butik</span
+                    >
+                  </div>
+                </div>
+                <!-- CTAs -->
+                <div class="flex flex-wrap items-center gap-space-md w-full">
+                  <a
+                    class="inline-flex items-center justify-center gap-space-sm px-6 py-3.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all"
+                    href="#basvuru-formu"
+                  >
+                    <span>Hemen Başvuru Yap</span>
+                    <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                  </a>
+                  <button
+                    class="inline-flex items-center justify-center gap-space-sm px-6 py-3.5 rounded-xl bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm hover:bg-surface-container transition-colors"
+                    onclick="
+                      alert(
+                        'Müfredat kataloğu (PDF) e-posta adresinize gönderilmek üzere hazırlanıyor.',
+                      )
+                    "
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-base text-secondary"
+                      >file_download</span
+                    >
+                    <span>Müfredat Kataloğunu İndir</span>
+                  </button>
+                </div>
+              </div>
+              <!-- Hero Visual Column -->
+              <div class="lg:col-span-5 relative flex justify-center items-center">
+                <div
+                  class="w-full relative rounded-xl overflow-hidden shadow-xl bg-surface-container"
+                >
+                  <img
+                    class="w-full h-[440px] object-cover"
+                    data-alt="A focused high-school student in a minimalist, sunlit study room reading an academic textbook with high concentration, surrounded by subtle digital timer overlays and books in deep navy and warm wood tones, crisp clean educational photography"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTjQ7j3KS73MV3BbCwv_ErBXVMWQ5xgEbKSGSYmZRGvPmUHOavt3HRuln_IjBtUU9Rajq9cCPibx6sA4l0QFxaAasZVy_9sHkyFPMEZRqrrc3affxQAA6D0NKh-WS5-SK1BW2fB_VG-MnHQcC591jje9Os0WRkZBuV-WzshI_-xeWpXyqe-pI-gS7R9OYDqLV8hWtw2tZmwZRmkrG8QReU1zLKqs1sJ6SRdJMeLx_2oi5ecRvQxrHR"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"
+                  ></div>
+                  <div
+                    class="absolute bottom-4 left-4 right-4 p-space-lg rounded-xl bg-primary/95 backdrop-blur-md text-on-primary shadow-xl"
+                  >
+                    <div class="flex items-center justify-between mb-space-xs">
+                      <span
+                        class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider"
+                        >Laboratuvar Sonuçları</span
+                      >
+                      <span class="material-symbols-outlined text-secondary text-lg"
+                        >trending_up</span
+                      >
+                    </div>
+                    <div class="flex items-baseline gap-space-xs">
+                      <span class="font-stat-counter text-stat-counter text-on-primary font-black"
+                        >+250%</span
+                      >
+                      <span class="font-title-md text-title-md text-on-primary-container"
+                        >Ortalama Okuma Hızı</span
+                      >
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-primary-container mt-1">
+                      Kavrama oranında düşüş olmaksızın dakika başına kelime (WPM) ortalaması
+                      180'den 520'ye yükselir.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Purpose and Scope (2-Column Analytical Block) -->
+        <section class="w-full bg-surface-container-low py-space-3xl">
+          <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mb-space-2xl">
+              <span
+                class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-widest"
+                >PEDAGOJİK ÇERÇEVE</span
+              >
+              <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs">
+                Eğitimin Amacı ve Kapsamı
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+                Klasik heceleme ve içten seslendirme alışkanlıklarını bilimsel egzersizlerle aşarak,
+                zihinsel odaklanmayı sürdürülebilir kılma yaklaşımı.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-xl">
+              <!-- Sol: Kimler İçin Uygundur -->
+              <div
+                class="bg-surface-container-lowest p-space-2xl rounded-xl shadow-sm flex flex-col justify-between"
+              >
+                <div>
+                  <div class="flex items-center gap-space-md mb-space-lg">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary"
+                    >
+                      <span class="material-symbols-outlined text-2xl">target</span>
+                    </div>
+                    <div>
+                      <h3 class="font-headline-sm text-headline-sm text-primary">
+                        Kimler İçin Uygundur?
+                      </h3>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant"
+                        >Öncelikli Katılımcı Profili</span
+                      >
+                    </div>
+                  </div>
+                  <ul class="flex flex-col gap-space-md">
+                    <li
+                      class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low"
+                    >
+                      <span class="material-symbols-outlined text-secondary text-xl mt-0.5"
+                        >verified_user</span
+                      >
+                      <div>
+                        <h4 class="font-title-md text-title-md text-primary">
+                          LGS, YKS &amp; ALES Adayları
+                        </h4>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                          Uzun paragraf ve yeni nesil mantık sorularında süre kaygısı yaşayan,
+                          süreyi yetiştirmekte zorlanan öğrenciler.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low"
+                    >
+                      <span class="material-symbols-outlined text-secondary text-xl mt-0.5"
+                        >verified_user</span
+                      >
+                      <div>
+                        <h4 class="font-title-md text-title-md text-primary">
+                          Odaklanma Güçlüğü Çekenler
+                        </h4>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                          Sayfa başında kaldığı yeri unutan, aynı cümleyi tekrar tekrar okuma
+                          (regresyon) döngüsüne girenler.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low"
+                    >
+                      <span class="material-symbols-outlined text-secondary text-xl mt-0.5"
+                        >verified_user</span
+                      >
+                      <div>
+                        <h4 class="font-title-md text-title-md text-primary">
+                          Yoğun Akademik &amp; Profesyonel Okuma Yapanlar
+                        </h4>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                          Raporlar, tezler, makaleler ve hukuki metinlerle çalışan; günlük 50+ sayfa
+                          bilgi tüketmesi gereken yetişkinler.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="mt-space-lg pt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"
+                >
+                  <span>Minimum Yaş: 11 Yaş (5. Sınıf)</span>
+                  <span class="text-primary font-semibold">Tüm Düzeyler Kabul Edilir</span>
+                </div>
+              </div>
+              <!-- Sağ: Kazanılacak Temel Beceriler -->
+              <div
+                class="bg-surface-container-lowest p-space-2xl rounded-xl shadow-sm flex flex-col justify-between"
+              >
+                <div>
+                  <div class="flex items-center gap-space-md mb-space-lg">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-2xl">auto_graph</span>
+                    </div>
+                    <div>
+                      <h3 class="font-headline-sm text-headline-sm text-primary">
+                        Kazanılacak Beceriler
+                      </h3>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant"
+                        >Bilişsel Çıktılar &amp; Kazanımlar</span
+                      >
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="p-space-md rounded-xl bg-surface-container-low">
+                      <span class="material-symbols-outlined text-secondary mb-1">visibility</span>
+                      <h4 class="font-title-md text-title-md text-primary">
+                        Göz Sıçrama Genişliği
+                      </h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                        Satırda 5-6 duraklama yerine 2 odak noktasıyla tüm satırı tarayabilme
+                        yetisi.
+                      </p>
+                    </div>
+                    <div class="p-space-md rounded-xl bg-surface-container-low">
+                      <span class="material-symbols-outlined text-secondary mb-1">volume_off</span>
+                      <h4 class="font-title-md text-title-md text-primary">
+                        İç Sesi Minimize Etme
+                      </h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                        Düşünce hızını seslendirme hızının (max 200 wpm) sınırlarından kurtarma
+                        tekniği.
+                      </p>
+                    </div>
+                    <div class="p-space-md rounded-xl bg-surface-container-low">
+                      <span class="material-symbols-outlined text-secondary mb-1">view_column</span>
+                      <h4 class="font-title-md text-title-md text-primary">Aktif Blok Okuma</h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                        Kelimeleri tek tek değil, 3-4 kelimelik anlam blokları ve fotoğrafik kümeler
+                        halinde algılama.
+                      </p>
+                    </div>
+                    <div class="p-space-md rounded-xl bg-surface-container-low">
+                      <span class="material-symbols-outlined text-secondary mb-1"
+                        >account_tree</span
+                      >
+                      <h4 class="font-title-md text-title-md text-primary">
+                        Derin Analiz &amp; Sentez
+                      </h4>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                        Metindeki ana fikir, yardımcı fikir ve mantıksal örüntüleri ilk taramada
+                        ayıklayabilme.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-space-lg p-space-md rounded-xl bg-surface-container flex items-center justify-between"
+                >
+                  <span class="font-body-sm text-body-sm text-primary font-medium"
+                    >Bireysel Gelişim Raporlaması:</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-primary text-on-primary"
+                    >Haftalık 1-e-1 Takip</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Modular Curriculum (Interactive Timeline / Accordion) -->
+        <section class="w-full bg-surface py-space-3xl">
+          <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-2xl"
+            >
+              <div>
+                <span
+                  class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-widest"
+                  >AKADEMİK YOL HARİTASI</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs"
+                >
+                  Modüler Eğitim Müfredatı
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+                  Her modül 2 haftalık uygulamalı atölye ve günlük 15 dakikalık ev takip sistemini
+                  içerir.
+                </p>
+              </div>
+              <div class="flex items-center gap-space-xs">
+                <span
+                  class="px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary"
+                  >Toplam 32 Ders Saati</span
+                >
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+              <!-- Module 1 -->
+              <div
+                class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-space-lg">
+                    <span class="font-stat-counter text-headline-md text-secondary font-black"
+                      >01</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-primary font-semibold"
+                      >1-2. Hafta</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">
+                    Hız Tespiti &amp; Göz Egzersizleri
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                    Kişisel başlangıç kelime/dakika ve anlama yüzdesinin klinik testlerle
+                    belirlenmesi. Göz kaslarını esnetme ve periferik alanı açma antrenmanları.
+                  </p>
+                </div>
+                <div class="pt-space-md bg-surface-container-low p-space-md rounded-xl">
+                  <span class="font-label-sm text-label-sm text-primary font-semibold block mb-1"
+                    >Pratik Çıktı:</span
+                  >
+                  <span class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Sakkadik göz hareketlerinde %40 çeviklik artışı.</span
+                  >
+                </div>
+              </div>
+              <!-- Module 2 -->
+              <div
+                class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-space-lg">
+                    <span class="font-stat-counter text-headline-md text-secondary font-black"
+                      >02</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-primary font-semibold"
+                      >3-4. Hafta</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">
+                    Görsel Algı &amp; Blok Okuma
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                    Tekil kelime takibini terk edip 2-3'lü anlam gruplarını tek bakışta yakalama.
+                    Tachistoscope ve takistoskopik kelime flaşlama yöntemleri.
+                  </p>
+                </div>
+                <div class="pt-space-md bg-surface-container-low p-space-md rounded-xl">
+                  <span class="font-label-sm text-label-sm text-primary font-semibold block mb-1"
+                    >Pratik Çıktı:</span
+                  >
+                  <span class="font-body-sm text-body-sm text-on-surface-variant"
+                    >İç sesin bastırılması ve 350+ WPM eşiğinin aşılması.</span
+                  >
+                </div>
+              </div>
+              <!-- Module 3 -->
+              <div
+                class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-space-lg">
+                    <span class="font-stat-counter text-headline-md text-secondary font-black"
+                      >03</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-primary font-semibold"
+                      >5-6. Hafta</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">
+                    Metin Analizi &amp; Kritik Paragraf
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                    Farklı türdeki metinleri (edebi, felsefi, bilimsel) çözümleme şablonları.
+                    Anahtar sözcük madenciliği ve paragrafın omurgasını haritalama.
+                  </p>
+                </div>
+                <div class="pt-space-md bg-surface-container-low p-space-md rounded-xl">
+                  <span class="font-label-sm text-label-sm text-primary font-semibold block mb-1"
+                    >Pratik Çıktı:</span
+                  >
+                  <span class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Soru çözümünde şık eleme hızında 2 kat artış.</span
+                  >
+                </div>
+              </div>
+              <!-- Module 4 -->
+              <div
+                class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-space-lg">
+                    <span class="font-stat-counter text-headline-md text-secondary font-black"
+                      >04</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-primary font-semibold"
+                      >7-8. Hafta</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">
+                    Odak Entegrasyonu &amp; Simülasyon
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                    Zaman baskısı altında stres yönetimi, yüksek tempolu sınav denemeleri,
+                    dayanıklılık testleri ve Sense Akademi Akreditasyon Sınavı.
+                  </p>
+                </div>
+                <div class="pt-space-md bg-surface-container-low p-space-md rounded-xl">
+                  <span class="font-label-sm text-label-sm text-primary font-semibold block mb-1"
+                    >Pratik Çıktı:</span
+                  >
+                  <span class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Kalıcı refleks ve Sense Sertifikasyon Belgesi.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Visual Gallery Section -->
+        <section class="w-full bg-surface-container-low py-space-3xl">
+          <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-2xl mb-space-2xl">
+              <span
+                class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-widest"
+                >AKADEMİ ORTAMI</span
+              >
+              <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs">
+                Eğitim ve Atölye Alanlarımız
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+                Bilişsel dikkati dağıtmayan nöro-mimari standartlarda tasarlanmış, teknolojik
+                cihazlarla donatılmış çalışma alanlarımız.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+              <!-- Gallery Card 1 -->
+              <div
+                class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col"
+              >
+                <div class="h-64 overflow-hidden relative">
+                  <img
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    data-alt="A modern, high-focus educational coaching classroom with 4 ergonomic desks, high resolution eye-tracking reading monitors, deep blue accents and warm minimalist lighting in Istanbul"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt46bprwFOe95_stPSUCFx0AVLZ5ucX5-OD6vvttpCpp8Ujbx1o_KMm7vz5V8JFT-0h9dZ9wSfhlIxJ_h-UOpFhZejSnB5pDvR0G2TD4uA6Qad8xX-QnNguP37NM0bP73glsz3h4FrR0Do34KZH6NmNDxekId2IRVOJheTo3tvz2p3wePnfeNSHkS4z8gu4Kt-yn68p4bBWSpEE0hgRe65xQUh3Ke6kh8olZS7jd-IK6AGDb8aRwbF"
+                  />
+                  <div
+                    class="absolute bottom-3 left-3 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm"
+                  >
+                    Butik Çalışma Salonu
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <h4 class="font-title-md text-title-md text-primary font-semibold">
+                    Maksimum 6 Kişilik Sınıflar
+                  </h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                    Öğretmen ve öğrenci arasında kesintisiz görsel iletişim ve anlık geri bildirim
+                    sağlayan akustik yalıtımlı ortam.
+                  </p>
+                </div>
+              </div>
+              <!-- Gallery Card 2 -->
+              <div
+                class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col"
+              >
+                <div class="h-64 overflow-hidden relative">
+                  <img
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    data-alt="Close up shot of professional cognitive reading tools, printed metric eye calibration charts, customized notebooks with navy cover and red bookmark ribbons on a clean oak wood desk"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJL55QA860SmF6HQjuy6TAMQmdja35V9a5ow8CSQb0dXdUjWcaEud0ZxZMhnBCbJCoZfWy-linyAl5l68WJubLDWmbnKxM8hmoO_-oyzrQoUh9yLE8b_hXCmczbo2MQYEdMnJ-ycu-rlu9z-zv9bZiCTtjEZZyYmCIo8QrVf7R9XaVVwkNpekBhXkuRH2dxYegOkONP268j1xDQ_t4raloRfx5uVkxk4fhnhhSaZyhWWZk-bxtK7sj"
+                  />
+                  <div
+                    class="absolute bottom-3 left-3 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm"
+                  >
+                    Özel Materyal Seti
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <h4 class="font-title-md text-title-md text-primary font-semibold">
+                    Tescilli Çalışma Kılavuzları
+                  </h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                    Sense Akademi uzmanlarınca hazırlanan basılı takistoskop kartları, açı
+                    cetvelleri ve kişisel analiz defteri.
+                  </p>
+                </div>
+              </div>
+              <!-- Gallery Card 3 -->
+              <div
+                class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col"
+              >
+                <div class="h-64 overflow-hidden relative">
+                  <img
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    data-alt="An educator reviewing a digital dashboard displaying reading speed progress graphs and comprehension percentages with a young student, bright supportive environment, clean UI visible"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7p_A89SuOasxIJRCZfIed7s4csWD3Lyw2dOKgFpaNAF66Atu17-pA6Qg1px9ZztEOUrwsTP0P0UsGfACL_x_IAokoXvYVaS0yJ-Oo--p9unsITtookFHUPacWXZkfiMkUKWJFiOMJxqnphMVOFjnviqJifKRRWnhHNJ0WRnIswNO2t_CyF0G9fyS0eb-6YaY2xEADHUWav3Rp0lt_INHOgIlTbg_pWCajvxxD2nrjdKdAn_WRI7P9"
+                  />
+                  <div
+                    class="absolute bottom-3 left-3 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm"
+                  >
+                    Dijital Ölçüm &amp; Takip
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <h4 class="font-title-md text-title-md text-primary font-semibold">
+                    Bireysel Performans Analitiği
+                  </h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                    Her ders başında yazılım destekli göz sıçrama ve kelime tarama hızının objektif
+                    metriklerle kayıt altına alınması.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Process: How It Works -->
+        <section class="w-full bg-surface py-space-3xl">
+          <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-space-3xl">
+              <span
+                class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-widest"
+                >METODOLOJİ</span
+              >
+              <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs">
+                Süreç Nasıl İşler?
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+                İlk adımdan mezuniyet anına kadar kanıtlanmış 4 aşamalı sistemimizle öğrencinin
+                gelişimini garanti altına alıyoruz.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg relative">
+              <!-- Step 1 -->
+              <div
+                class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col relative"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-primary text-on-primary font-title-md text-title-md flex items-center justify-center font-bold mb-space-lg"
+                >
+                  1
+                </div>
+                <h3 class="font-title-md text-title-md text-primary mb-space-xs">
+                  Ön Seviye Tespiti
+                </h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Öğrencinin mevcut okuma hızı (WPM), anlama yüzdesi ve regresyon sıklığı ücretsiz
+                  analiz seansında ölçülür.
+                </p>
+              </div>
+              <!-- Step 2 -->
+              <div
+                class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col relative"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-surface-container text-primary font-title-md text-title-md flex items-center justify-center font-bold mb-space-lg"
+                >
+                  2
+                </div>
+                <h3 class="font-title-md text-title-md text-primary mb-space-xs">
+                  Kişisel Planlama
+                </h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Öğrencinin sınıf seviyesine (sınav hazırlığı veya yetişkin profesyonel) uygun
+                  butik grup ya da birebir seans rotası belirlenir.
+                </p>
+              </div>
+              <!-- Step 3 -->
+              <div
+                class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col relative"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-surface-container text-primary font-title-md text-title-md flex items-center justify-center font-bold mb-space-lg"
+                >
+                  3
+                </div>
+                <h3 class="font-title-md text-title-md text-primary mb-space-xs">Butik Uygulama</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Haftalık 4 saat interaktif laboratuvar ortamında göz jimnastiği ve metin
+                  analizleriyle pratik refleksler kazanılır.
+                </p>
+              </div>
+              <!-- Step 4 -->
+              <div
+                class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col relative"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-title-md text-title-md flex items-center justify-center font-bold mb-space-lg"
+                >
+                  4
+                </div>
+                <h3 class="font-title-md text-title-md text-primary mb-space-xs">
+                  Gelişim &amp; Sertifika
+                </h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Eğitim sonunda nihai seviye ölçümü yapılır, somut hız artışı raporu ve Sense
+                  Akademi Başarı Sertifikası teslim edilir.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Application Form Section -->
+        <section
+          class="w-full bg-surface-container-low py-space-3xl scroll-mt-24"
+          id="basvuru-formu"
+        >
+          <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start">
+              <!-- Left: Form Info & Trust Badges -->
+              <div class="lg:col-span-5 flex flex-col">
+                <span
+                  class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-widest"
+                  >KAYIT &amp; DANIŞMANLIK</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg text-primary tracking-tight mt-space-xs mb-space-md"
+                >
+                  Geleceğinize Hız Kazandırın
+                </h2>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-space-xl leading-relaxed"
+                >
+                  Formu doldurarak uzman danışmanlarımızın sizinle iletişime geçmesini sağlayabilir,
+                  seviye belirleme randevunuzu hemen oluşturabilirsiniz.
+                </p>
+                <!-- Primary Trust Card -->
+                <div class="p-space-xl rounded-xl bg-primary text-on-primary shadow-md mb-space-lg">
+                  <div class="flex items-start gap-space-md">
+                    <span class="material-symbols-outlined text-secondary text-3xl">verified</span>
+                    <div>
+                      <h4 class="font-title-md text-title-md text-on-primary font-bold">
+                        Ücretsiz Ön Analiz Garantisi
+                      </h4>
+                      <p class="font-body-sm text-body-sm text-on-primary-container mt-1">
+                        İlk ders öncesi kapsamlı okuma hızı ve kavrama analizi tamamen ücretsizdir.
+                        Taahhüt gerektirmez.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Feature Bullets -->
+                <div class="flex flex-col gap-space-md">
+                  <div class="flex items-center gap-space-sm text-on-surface">
+                    <span class="material-symbols-outlined text-secondary">check_circle</span>
+                    <span class="font-body-sm text-body-sm font-medium"
+                      >Bireysel mentorluk ve 4-6 kişilik mikro gruplar</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-space-sm text-on-surface">
+                    <span class="material-symbols-outlined text-secondary">check_circle</span>
+                    <span class="font-body-sm text-body-sm font-medium"
+                      >Kaçırılan dersler için telafi atölyeleri</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-space-sm text-on-surface">
+                    <span class="material-symbols-outlined text-secondary">check_circle</span>
+                    <span class="font-body-sm text-body-sm font-medium"
+                      >Tüm eğitim dokümanları ve platform lisansı dahil</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Right: The Application Form -->
+              <div
+                class="lg:col-span-7 bg-surface-container-lowest p-space-2xl rounded-xl shadow-lg"
+              >
+                <!-- Bu form şu an yalnızca başarı mesajı gösterir; sunucuya veri göndermez. -->
+                <form
+                  class="flex flex-col gap-space-lg"
+                  id="applicationForm"
+                  onsubmit="
+                    event.preventDefault();
+                    document.getElementById('formSuccess').classList.remove('hidden');
+                    this.classList.add('hidden');
+                  "
+                >
+                  <div class="flex flex-col gap-space-xs">
+                    <h3 class="font-headline-sm text-headline-sm text-primary">
+                      Anlayarak Hızlı Okuma Programına Başvurun
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Kontenjanlar başvuru önceliğine göre teyit edilmektedir.
+                    </p>
+                  </div>
+                  <!-- Name & Phone -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="flex flex-col gap-1.5">
+                      <label
+                        class="font-label-md text-label-md text-on-surface font-semibold"
+                        for="fullName"
+                        >Ad Soyad *</label
+                      >
+                      <input
+                        class="h-11 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                        id="fullName"
+                        placeholder="Örn: Ahmet Yılmaz"
+                        required=""
+                        type="text"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                      <label
+                        class="font-label-md text-label-md text-on-surface font-semibold"
+                        for="phone"
+                        >Telefon Numarası *</label
+                      >
+                      <input
+                        class="h-11 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                        id="phone"
+                        placeholder="0 (5XX) XXX XX XX"
+                        required=""
+                        type="tel"
+                      />
+                    </div>
+                  </div>
+                  <!-- Email & Age -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="flex flex-col gap-1.5">
+                      <label
+                        class="font-label-md text-label-md text-on-surface font-semibold"
+                        for="email"
+                        >E-posta Adresi *</label
+                      >
+                      <input
+                        class="h-11 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                        id="email"
+                        placeholder="ahmet@example.com"
+                        required=""
+                        type="email"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                      <label
+                        class="font-label-md text-label-md text-on-surface font-semibold"
+                        for="studentLevel"
+                        >Öğrencinin Sınıfı / Yaşı *</label
+                      >
+                      <select
+                        class="h-11 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                        id="studentLevel"
+                        required=""
+                      >
+                        <option disabled="" selected="" value="">Seçiniz</option>
+                        <option value="5-8">5 - 8. Sınıf (LGS Hazırlık)</option>
+                        <option value="9-12">9 - 12. Sınıf (YKS Hazırlık)</option>
+                        <option value="universite">Üniversite / Lisansüstü</option>
+                        <option value="yetiskin">Yetişkin / Profesyonel</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- Selected Course (Locked/Highlighted) -->
+                  <div class="flex flex-col gap-1.5">
+                    <label class="font-label-md text-label-md text-on-surface font-semibold"
+                      >İlgilenilen Eğitim Programı</label
+                    >
+                    <div
+                      class="flex items-center justify-between h-11 px-3.5 rounded-lg bg-surface-container text-primary font-label-lg text-label-lg"
+                    >
+                      <div class="flex items-center gap-space-sm">
+                        <span class="material-symbols-outlined text-secondary text-sm">lock</span>
+                        <span>Anlayarak Hızlı Okuma Eğitimi</span>
+                      </div>
+                      <span
+                        class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-medium"
+                        >Sabit Program</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Notes -->
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="font-label-md text-label-md text-on-surface font-semibold"
+                      for="notes"
+                      >Varsa Eklemek İstedikleriniz (Opsiyonel)</label
+                    >
+                    <textarea
+                      class="p-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                      id="notes"
+                      placeholder="Örn: Sınav hazırlığı yapıyorum, paragraf sorularında hızlanmak istiyorum..."
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <!-- KVKK Checkbox -->
+                  <div class="flex items-start gap-space-sm pt-space-xs">
+                    <input
+                      class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary"
+                      id="kvkk"
+                      required=""
+                      type="checkbox"
+                    />
+                    <label
+                      class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer"
+                      for="kvkk"
+                    >
+                      Sense Akademi
+                      <a class="text-primary underline font-medium" data-path="kvkk" href="#"
+                        >KVKK ve Aydınlatma Metni</a
+                      >'ni okudum, eğitim bilgilendirmesi amacıyla iletişim bilgilerimin işlenmesini
+                      kabul ediyorum.
+                    </label>
+                  </div>
+                  <!-- Submit Button -->
+                  <button
+                    class="w-full flex items-center justify-center gap-space-sm py-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-all shadow-md group"
+                    type="submit"
+                  >
+                    <span>Başvurumu Gönder</span>
+                    <span
+                      class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform"
+                      >send</span
+                    >
+                  </button>
+                </form>
+                <!-- Success State Message -->
+                <div
+                  class="hidden p-space-2xl text-center flex flex-col items-center justify-center"
+                  id="formSuccess"
+                >
+                  <div
+                    class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-space-lg"
+                  >
+                    <span class="material-symbols-outlined text-3xl">task_alt</span>
+                  </div>
+                  <h3 class="font-headline-md text-headline-md text-primary mb-space-xs">
+                    Başvurunuz Alındı!
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-xl">
+                    Sense Akademi akademik danışmanımız, ücretsiz okuma hızı ve kavrama analizi
+                    randevunuzu teyit etmek için 24 saat içinde sizinle iletişime geçecektir.
+                  </p>
+                  <button
+                    class="px-6 py-2.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md"
+                    onclick="
+                      document.getElementById('applicationForm').reset();
+                      document.getElementById('applicationForm').classList.remove('hidden');
+                      document.getElementById('formSuccess').classList.add('hidden');
+                    "
+                    type="button"
+                  >
+                    Yeni Bir Başvuru Yap
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Interactive FAQ Micro-Section -->
+        <section class="w-full bg-surface py-space-2xl">
+          <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <h3 class="font-headline-sm text-headline-sm text-primary text-center mb-space-xl">
+              Sıkça Sorulan Sorular
+            </h3>
+            <div class="flex flex-col gap-space-sm">
+              <details
+                class="group bg-surface-container-lowest p-space-lg rounded-xl shadow-sm cursor-pointer"
+              >
+                <summary
+                  class="flex justify-between items-center font-title-md text-title-md text-primary list-none font-semibold"
+                >
+                  <span>Hızlı okumak anlama oranını düşürür mü?</span>
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform"
+                    >expand_more</span
+                  >
+                </summary>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-space-md pt-space-sm"
+                >
+                  Aksine, geleneksel yavaş okumada zihin boşluk bularak dikkat dağınıklığı yaşar.
+                  Anlayarak hızlı okuma metodolojimiz, beyne bilginin işleme kapasitesine yakın bir
+                  akış sağlayarak odaklanmayı ve kavramayı en üst seviyeye çıkarır.
+                </p>
+              </details>
+              <details
+                class="group bg-surface-container-lowest p-space-lg rounded-xl shadow-sm cursor-pointer"
+              >
+                <summary
+                  class="flex justify-between items-center font-title-md text-title-md text-primary list-none font-semibold"
+                >
+                  <span>Kazanılan okuma hızı kalıcı mıdır?</span>
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform"
+                    >expand_more</span
+                  >
+                </summary>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-space-md pt-space-sm"
+                >
+                  8 haftalık program göz kaslarının fiziksel olarak esnetilmesini ve beyindeki nöral
+                  bağlantıların yeniden yapılanmasını sağlar. Yüzme ya da bisiklete binme gibi motor
+                  bir refleks haline geldiği için ömür boyu kalıcıdır.
+                </p>
+              </details>
+              <details
+                class="group bg-surface-container-lowest p-space-lg rounded-xl shadow-sm cursor-pointer"
+              >
+                <summary
+                  class="flex justify-between items-center font-title-md text-title-md text-primary list-none font-semibold"
+                >
+                  <span>Online veya yüz yüze seçenekler var mı?</span>
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform"
+                    >expand_more</span
+                  >
+                </summary>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-space-md pt-space-sm"
+                >
+                  Evet, akademimizin Maslak kampüsünde fiziki butik sınıfların yanı sıra, aynı
+                  interaktif standartlara sahip canlı online atölye seçeneklerimiz de mevcuttur.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+<footer class="home-footer">
+  <div class="home-footer-inner">
+    <div class="home-footer-grid">
+      <div>
+        <div class="home-footer-brand">
+          <img src="https://lh3.googleusercontent.com/aida/AEtjO1VLwGG3FPlMlV51Qixnc2VPIUluP1ICFbYijQ43od9C_4ONTPEs-TR3rRendcmwgL0pZp0q-hKgKtHueD0tiVFvH3l1tVMxRaiAk3r1rAy9TzBh9l-TkyBJ5iJA1VEHpKli0xN3aJyhlx7cBs6t9Sjcb-xipouA87FuUsOT8ViXtztbhliF26TqSA1SjaR2EgMBpNVqZGfH82-iddORa4xDitn0fDFrjXGJXQLW_7Q468nr-2n--b4SWKwiALAKNy3xArXKiMhrCg" alt="" />
+          <span>Sense Akademi</span>
+        </div>
+        <p>Öğrenmeyi daha anlamlı, gelişimi daha sürdürülebilir kılıyoruz.</p>
+      </div>
+      <div>
+        <h2>Hızlı Bağlantılar</h2>
+        <ul class="home-footer-list">
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="egitimler.html">Eğitimlerimiz</a></li>
+          <li><a href="biz-kimiz.html">Biz Kimiz?</a></li>
+          <li><a href="referanslarimiz.html">Referanslarımız</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Eğitimlerimiz</h2>
+        <ul class="home-footer-list">
+          <li><a href="hizli.html">Anlayarak Hızlı Okuma</a></li>
+          <li><a href="ilkokul-okuma.html">İlkokul Akıcı ve Doğru Okuma</a></li>
+          <li><a href="kocluk.html">Profesyonel Eğitim Koçluğu</a></li>
+          <li><a href="deneme.html">Deneme Kulübü</a></li>
+          <li><a href="zeka-oyunlari.html">Akıl ve Zeka Oyunları</a></li>
+        </ul>
+      </div>
+      <div class="home-footer-contact">
+        <h2>İletişim</h2>
+        <p><a href="mailto:info@senseakademi.com">info@senseakademi.com</a></p>
+        <p><a href="tel:+902123456789">+90 (212) 345 67 89</a></p>
+        <p>Maslak Mah. Büyükdere Cad. No: 255 Sarıyer, İstanbul</p>
+        <p><a href="https://enishoca.senseakademi.com" target="_blank" rel="noopener noreferrer">Öğrenci Giriş Portalı</a></p>
+      </div>
+    </div>
+    <div class="home-footer-bottom">
+      <p>© Sense Akademi. Tüm hakları saklıdır.</p>
+      <nav class="home-footer-legal" aria-label="Alt menü">
+        <a href="biz-kimiz.html">Biz Kimiz?</a>
+        <a href="referanslarimiz.html">Referanslarımız</a>
+        <a href="iletisim.html">İletişim</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
